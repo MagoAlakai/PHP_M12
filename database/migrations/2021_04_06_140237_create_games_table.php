@@ -16,6 +16,12 @@ class CreateGamesTable extends Migration
         //TODO: crear la base de datos y hacer migrate:fresh
         Schema::create('games', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
+            $table->string('stadium');
+            $table->integer('team_1');
+            $table->integer('result_1');
+            $table->integer('team_2');
+            $table->integer('result_2');
             $table->timestamps();
         });
     }

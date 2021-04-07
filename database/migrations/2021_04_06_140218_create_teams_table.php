@@ -16,6 +16,9 @@ class CreateTeamsTable extends Migration
         //TODO: crear la base de datos y hacer migrate:fresh
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('city');
+            $table->string('stadium');
             $table->timestamps();
         });
     }

@@ -72,7 +72,7 @@
             <a class="nav-link active" href="teams">Teams</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="games">Matches</a>
+            <a class="nav-link active" href="games">Games</a>
           </li>
         </ul>
             <div class="d-flex align-items-center me-5">
