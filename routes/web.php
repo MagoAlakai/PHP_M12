@@ -16,26 +16,32 @@ use App\Http\Controllers\GamesController;
 |
 */
 
+require __DIR__.'/auth.php';
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 //Route Home
 Route::get('/', function(){
     return view('home');
 });
 
-//Route login
-Route::get('login', [Controller::class, 'loginForm']);
-Route::post('login', [Controller::class, 'check']);
+// //Route login
+// Route::get('login', [Controller::class, 'loginForm']);
+// Route::post('login', [Controller::class, 'check']);
 
-//Route register
-Route::get('register', [Controller::class, 'registerForm']);
-Route::post('register', [Controller::class, 'store']);
+// //Route register
+// Route::get('register', [Controller::class, 'registerForm']);
+// Route::post('register', [Controller::class, 'store']);
 
-//Route recover password
-Route::get('password', [Controller::class, 'passwordForm']);
-Route::post('password', [Controller::class, 'recover']);
+// //Route recover password
+// Route::get('password', [Controller::class, 'passwordForm']);
+// Route::post('password', [Controller::class, 'recover']);
 
 //Routes Teams
 Route::prefix('teams')->group(function () {
@@ -85,8 +91,10 @@ Route::prefix('games')->group(function () {
 });
 
 
-
 //Route página error 404
 Route::get('error404', function(){
     return view('error404');
 });
+
+require __DIR__.'/auth.php';
+
