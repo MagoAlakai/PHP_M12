@@ -71,8 +71,9 @@ class GamesController extends Controller
             'date' => 'required',
             'estadium' => 'required',
             'team_1' => 'required',
+            'result_1' => 'required',
             'team_2' => 'required',
-            'result' => 'required',
+            'result_2' => 'required',
           ]);
 
           $date = $request->input('date');

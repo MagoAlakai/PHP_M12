@@ -49,7 +49,7 @@
 
 <header class="mb-5">
   <!-- Fixed navbar -->
-  <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #8fc2e9;">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #517ffd;">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -96,9 +96,9 @@
 
 </main>
 
-<footer class="footer mt-auto py-3" style="background-color: #8fc2e9;">
+<footer class="footer mt-auto py-3" style="background-color: #517ffd;">
     <div class="container d-flex justify-content-center">
-      <span class=" text-dark">2021 - IT Academy</span>
+      <span class=" text-light">2021 - IT Academy</span>
     </div>
   </footer>
 

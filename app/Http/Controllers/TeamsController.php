@@ -18,7 +18,7 @@ class TeamsController extends Controller
         $request->validate([
             'name' => 'required',
             'city' => 'required',
-            'president' => 'required',
+            'stadium' => 'required',
           ]);
 
           $name = $request->input('name');
