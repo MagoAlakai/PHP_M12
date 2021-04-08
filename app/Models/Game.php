@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Team;
 
 class Game extends Model
 {
@@ -11,9 +12,14 @@ class Game extends Model
 
     protected $fillable = [
         'date',
-        'estadium',
         'team_1',
+        'result_1',
         'team_2',
-        'result',
+        'result_2',
+        'stadium',
     ];
+
+    public function teams(){
+        return $this->belongsToMany(Team::class);
+    }
 }

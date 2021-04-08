@@ -23,13 +23,13 @@ class TeamsController extends Controller
 
           $name = $request->input('name');
           $city = $request->input('city');
-          $president = $request->input('president');
+          $stadium = $request->input('stadium');
 
-          if($name !== null && $city !== null && $president !== null){
+          if($name !== null && $city !== null && $stadium !== null){
             Team::create([
                 'name'=> $name,
                 'city'=> $city,
-                'presidente'=> $president,
+                'stadium'=> $stadium,
             ]);
               Alert::success('The new team has been created successfully!')->persistent(true,false);
               return redirect('teams');
@@ -65,14 +65,14 @@ class TeamsController extends Controller
         $request->validate([
             'name' => 'required',
             'city' => 'required',
-            'president' => 'required',
+            'stadium' => 'required',
           ]);
 
           $name = $request->input('name');
           $city = $request->input('city');
-          $president = $request->input('president');
+          $stadium = $request->input('stadium');
 
-          if($name !== null && $city !== null && $president !== null){
+          if($name !== null && $city !== null && $stadium !== null){
             $team->update($request->all());
             Alert::success('The team has been updated successfully!')->persistent(true,false);
             return redirect('teams');

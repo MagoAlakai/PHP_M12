@@ -18,23 +18,27 @@ class GamesController extends Controller
             'date' => 'required',
             'estadium' => 'required',
             'team_1' => 'required',
+            'result_1' => 'required',
             'team_2' => 'required',
-            'result' => 'required',
+            'result_2' => 'required',
+            'stadium' => 'required',
           ]);
 
           $date = $request->input('date');
-          $estadium = $request->input('estadium');
           $team1 = $request->input('team_1');
+          $result_1 = $request->input('result_1');
           $team2 = $request->input('team_2');
-          $result = $request->input('result');
+          $result_2 = $request->input('result_2');
+          $stadium = $request->input('stadium');
 
-          if($date !== null && $estadium !== null && $team1 !== null && $team2 !== null && $result !== null){
+          if($date !== null && $team1 !== null && $result_1 !== null && $team2 !== null && $result_2 !== null && $stadium !== null){
             Game::create([
                 'date' => $date ,
-                'estadium' => $estadium,
                 'team_1' => $team1,
+                'result_1' => $result_1,
                 'team_2' => $team2,
-                'result' => $result,
+                'result_2' => $result_2,
+                'stadium' => $stadium,
             ]);
               Alert::success('The new game has been created successfully!')->persistent(true,false);
               return redirect('games');
@@ -69,20 +73,21 @@ class GamesController extends Controller
         $game = Game::find($id);
         $request->validate([
             'date' => 'required',
-            'estadium' => 'required',
             'team_1' => 'required',
             'result_1' => 'required',
             'team_2' => 'required',
             'result_2' => 'required',
+            'stadium' => 'required',
           ]);
 
           $date = $request->input('date');
-          $estadium = $request->input('estadium');
           $team1 = $request->input('team_1');
+          $result_1 = $request->input('result_1');
           $team2 = $request->input('team_2');
-          $result = $request->input('result');
+          $result_2 = $request->input('result_2');
+          $stadium = $request->input('stadium');
 
-          if($date !== null && $estadium !== null && $team1 !== null && $team2 !== null && $result !== null){
+          if($date !== null && $team1 !== null && $result_1 !== null && $team2 !== null && $result_2 !== null && $stadium !== nul){
             $game->update($request->all());
             Alert::success('The game has been updated successfully!')->persistent(true,false);
             return redirect('games');

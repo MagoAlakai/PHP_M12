@@ -77,7 +77,7 @@ Route::prefix('games')->group(function () {
         Route::post('/', [GamesController::class, 'create']);
     });
 
-    //Route show team
+    //Route show game
     Route::get('show/{id}', [GamesController::class, 'show']);
 
     //Routes update

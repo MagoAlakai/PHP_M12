@@ -18,11 +18,16 @@ class CreateGamesTable extends Migration
             $table->id();
             $table->date('date');
             $table->string('stadium');
-            $table->integer('team_1');
+            $table->unassignedBigInteger('team_1');
             $table->integer('result_1');
-            $table->integer('team_2');
+            $table->unassignedBigInteger('team_2');
             $table->integer('result_2');
+            $table->string('stadium');
             $table->timestamps();
+
+            //Foreign keys
+            $table->foreign('team_1')->references('id')->on('teams');
+            $table->foreign('team_2')->references('id')->on('teams');
         });
     }
 

@@ -8,15 +8,14 @@
 
 <div class="container mt-4">
     <ul class="row d-block">
-        <li class="col-3 mt-2 mx-auto"><strong>Name: </strong>{{$employee->name}}</li>
-        <li class="col-3 mt-2 mx-auto"><strong>Email: </strong>{{$employee->email}}</li>
-        <li class="col-3 mt-2 mx-auto"><strong>Phone: </strong>{{$employee->phone}}</li>
-        <li class="col-3 mt-2 mx-auto"><strong>Department: </strong>{{$employee->department}}</li>
-        <li class="col-3 mt-2 mx-auto"><strong>Job: </strong>{{$employee->job}}</li>
+        <li class="col-3 mt-2 mx-auto"><strong>Date: </strong>{{$game->date}}</li>
+        <li class="col-3 mt-2 mx-auto"><strong>Visitor Team: </strong>{{$game->team_1}} - {{$game->result_1}}</li>
+        <li class="col-3 mt-2 mx-auto"><strong>Local Team: </strong>{{$game->team_2}} - {{$game->result_2}}</li>
+        <li class="col-3 mt-2 mx-auto"><strong>Stadium: </strong>{{$game->stadium}}</li>
     </ul>
 
     <div class="container d-flex justify-content-center">
-        <a href="{{url('/employees')}}"><button type="button" class="btn btn-outline-primary mt-4">Back to Employees List</button></a>
+        <a href="{{url('/games')}}"><button type="button" class="btn btn-outline-primary mt-4">Back to Games List</button></a>
     </div>
 </div>
 
