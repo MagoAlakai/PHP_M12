@@ -13,14 +13,12 @@ class CreateGamesTable extends Migration
      */
     public function up()
     {
-        //TODO: crear la base de datos y hacer migrate:fresh
         Schema::create('games', function (Blueprint $table) {
             $table->id();
             $table->date('date');
-            $table->string('stadium');
-            $table->unassignedBigInteger('team_1');
+            $table->unsignedBigInteger('team_1');
             $table->integer('result_1');
-            $table->unassignedBigInteger('team_2');
+            $table->unsignedBigInteger('team_2');
             $table->integer('result_2');
             $table->string('stadium');
             $table->timestamps();

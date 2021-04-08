@@ -13,7 +13,6 @@ class CreateTeamsTable extends Migration
      */
     public function up()
     {
-        //TODO: crear la base de datos y hacer migrate:fresh
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->string('name');
@@ -30,6 +29,6 @@ class CreateTeamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('equipos');
+        Schema::dropIfExists('teams');
     }
 }

@@ -14,6 +14,7 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
+    <!--TODO:averiguar cómo seleccionar equipos.-->
     <div class="d-flex justify-content-center mb-2">
         <div class="mb-3 col-6">
             <label class="form-label">Visitor Team</label>
@@ -47,6 +48,7 @@
             @enderror
         </div>
     </div>
+    <!--TODO:averiguar cómo seleccionar estadios.-->
     <div class="mb-3 col-8 mx-auto">
         <label class="form-label">Stadium</label>
         <input type="text" id="stadium" name="stadium" class="form-control @error('stadium') is-invalid @enderror">
