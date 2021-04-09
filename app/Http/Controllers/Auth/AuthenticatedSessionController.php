@@ -19,7 +19,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
-        return view('auth.login');
+        return view('auth/login');
     }
 
     /**
@@ -44,7 +44,7 @@ class AuthenticatedSessionController extends Controller
         Cookie::queue(Cookie::make('login', $name, 60));
         Cookie::queue(Cookie::make('admin', $admin_verified, 60));
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect('teams');
     }
 
     /**

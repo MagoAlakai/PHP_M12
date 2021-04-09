@@ -28,10 +28,16 @@ class GamesController extends Controller
             'stadium' => 'required',
           ]);
 
+          $team1_input = $request->input('team_1');
+          $team1_team = Team::where('name', $team1_input)->get();
+
+          $team2_input = $request->input('team_2');
+          $team2_team = Team::where('name', $team2_input)->get();
+
           $date = $request->input('date');
-          $team1 = $request->input('team_1');
+          $team1 = $team1_team->id;
           $result_1 = $request->input('result_1');
-          $team2 = $request->input('team_2');
+          $team2 = $team2_team->id;
           $result_2 = $request->input('result_2');
           $stadium = $request->input('stadium');
 

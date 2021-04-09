@@ -18,12 +18,15 @@
     <div class="d-flex justify-content-center mb-2">
         <div class="mb-3 col-6">
             <label class="form-label">Visitor Team</label>
-            <select class="selectpicker form-control" id="team_1" name="team_1">
-                <option><small>Please select team</small></option>
+            <select class="form-select form-control" id="team_1" name="team_1" class= "@error('team_1') is-invalid @enderror">
+                <option value=""><small>Please select a team</small></option>
                 @foreach ($teams as $team)
                 <option>{{$team->name}}</option>
                 @endforeach
             </select>
+            @error('team_1')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="mb-3 col-2">
             <label class="form-label">Result</label>
@@ -37,12 +40,15 @@
     <div class="d-flex justify-content-center mb-2">
         <div class="mb-3 col-6">
             <label class="form-label">Local Team</label>
-            <select class="selectpicker form-control" id="team_2" name="team_2">
-                <option><small>Please select team</small></option>
+            <select class="form-select form-control" id="team_2" name="team_2" class=" @error('team_2') is-invalid @enderror">
+                <option value=""><small>Please select a team</small></option>
                 @foreach ($teams as $team)
                 <option>{{$team->name}}</option>
                 @endforeach
             </select>
+            @error('team_2')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
         <div class="mb-3 col-2">
             <label class="form-label">Result</label>
@@ -55,12 +61,15 @@
     <!--TODO:averiguar cómo seleccionar estadios.-->
     <div class="mb-3 col-8 mx-auto">
         <label class="form-label">Stadium</label>
-        <select class="selectpicker form-control" id="stadium" name="stadium">
-            <option><small>Please select stadium</small></option>
+        <select class="form-select form-control"  id="stadium" name="stadium" class=" @error('stadium') is-invalid @enderror">
+            <option value=""><small>Please select stadium</small></option>
             @foreach ($teams as $team)
             <option>{{$team->stadium}}</option>
             @endforeach
         </select>
+        @error('stadium')
+                <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
     <button type="submit" class="btn btn-primary col-8 mx-auto">Create game</button>
   </form>

@@ -19,7 +19,11 @@ class Game extends Model
         'stadium',
     ];
 
-    public function teams(){
-        return $this->belongsToMany(Team::class);
+    public function visitante(){
+        return $this->belongsToMany(Team::class,'games', 'team_1', 'id');
+    }
+
+    public function local(){
+        return $this->belongsToMany(Team::class,'games', 'team_2', 'id');
     }
 }
