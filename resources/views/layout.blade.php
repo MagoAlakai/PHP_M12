@@ -75,16 +75,21 @@
             <a class="nav-link active" href="games">Games</a>
           </li>
         </ul>
-            <div class="d-flex align-items-center me-5">
+            <div class="d-flex align-items-center me-3">
                 @if(Cookie::get('login'))
                     <h6 class="navbar-brand">{{ Cookie::get('login') }}</h6>
                 @endif
                 <img src={{Storage::url("images/user.png")}} alt="User"width="30" height="30">
             </div>
-        {{-- <form class="d-flex" method="GET" action="{{ route('employees.job') }}">
-            <input class="form-control me-2" type="search" placeholder="Search by job!" aria-label="Search by job!" id="jobFilter" name="jobFilter">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> --}}
+
+            @if(Cookie::get('login'))
+
+                <form class="d-flex me-2" method="POST" action="{{ route('logout') }}">
+                    <input type="hidden" name="_token" value={{csrf_token()}}>
+                    <button class="btn btn-success" type="submit">Log Out</button>
+                </form>
+
+            @endif
       </div>
     </div>
   </nav>

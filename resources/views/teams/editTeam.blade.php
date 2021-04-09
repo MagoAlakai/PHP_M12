@@ -20,8 +20,8 @@
     <div class="d-flex justify-content-center mb-2">
         <div class="mb-3 col-4">
             <label class="form-label">City</label>
-            <input type="text" id="text" name="text" class="form-control @error('text') is-invalid @enderror" value="{{$team->city}}">
-            @error('text')
+            <input type="text" id="city" name="city" class="form-control @error('city') is-invalid @enderror" value="{{$team->city}}">
+            @error('city')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>

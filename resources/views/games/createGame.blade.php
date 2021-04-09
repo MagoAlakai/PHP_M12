@@ -18,14 +18,16 @@
     <div class="d-flex justify-content-center mb-2">
         <div class="mb-3 col-6">
             <label class="form-label">Visitor Team</label>
-            <input type="text" id="team_1" name="team_1" class="form-control @error('team_1') is-invalid @enderror">
-            @error('team_1')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+            <select class="selectpicker form-control" id="team_1" name="team_1">
+                <option><small>Please select team</small></option>
+                @foreach ($teams as $team)
+                <option>{{$team->name}}</option>
+                @endforeach
+            </select>
         </div>
         <div class="mb-3 col-2">
             <label class="form-label">Result</label>
-            <input type="number" id="result_1" name="result_1" class="form-control @error('result_1') is-invalid @enderror">
+            <input type="number" min="0" id="result_1" name="result_1" class="form-control @error('result_1') is-invalid @enderror">
             @error('result_1')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -35,14 +37,16 @@
     <div class="d-flex justify-content-center mb-2">
         <div class="mb-3 col-6">
             <label class="form-label">Local Team</label>
-            <input type="text" id="team_2" name="team_2" class="form-control @error('team_2') is-invalid @enderror">
-            @error('team_2')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+            <select class="selectpicker form-control" id="team_2" name="team_2">
+                <option><small>Please select team</small></option>
+                @foreach ($teams as $team)
+                <option>{{$team->name}}</option>
+                @endforeach
+            </select>
         </div>
         <div class="mb-3 col-2">
             <label class="form-label">Result</label>
-            <input type="number" id="result_2" name="result_2" class="form-control @error('result_2') is-invalid @enderror">
+            <input type="number" min="0" id="result_2" name="result_2" class="form-control @error('result_2') is-invalid @enderror">
             @error('result_2')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -51,10 +55,12 @@
     <!--TODO:averiguar cómo seleccionar estadios.-->
     <div class="mb-3 col-8 mx-auto">
         <label class="form-label">Stadium</label>
-        <input type="text" id="stadium" name="stadium" class="form-control @error('stadium') is-invalid @enderror">
-        @error('stadium')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
+        <select class="selectpicker form-control" id="stadium" name="stadium">
+            <option><small>Please select stadium</small></option>
+            @foreach ($teams as $team)
+            <option>{{$team->stadium}}</option>
+            @endforeach
+        </select>
     </div>
     <button type="submit" class="btn btn-primary col-8 mx-auto">Create game</button>
   </form>

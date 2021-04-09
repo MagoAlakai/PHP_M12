@@ -9,8 +9,8 @@
 <div class="container mt-4">
     <ul class="row d-block">
         <li class="col-3 mt-2 mx-auto"><strong>Name: </strong>{{$team->name}}</li>
-        <li class="col-3 mt-2 mx-auto"><strong>City: </strong>{{$team->email}}</li>
-        <li class="col-3 mt-2 mx-auto"><strong>Stadium: </strong>{{$team->phone}}</li>
+        <li class="col-3 mt-2 mx-auto"><strong>City: </strong>{{$team->city}}</li>
+        <li class="col-3 mt-2 mx-auto"><strong>Stadium: </strong>{{$team->stadium}}</li>
     </ul>
 
     <div class="container d-flex justify-content-center">

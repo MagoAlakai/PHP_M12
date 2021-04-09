@@ -7,6 +7,8 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Support\Facades\Cookie;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -28,9 +30,19 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
+        //dd($request);
+        $email = $request->email;
+        $user = User::where('email', $email)->first();
+        $name = $user->name;
+        //dd($name);
+        $admin_verified = true;
+
         $request->authenticate();
 
         $request->session()->regenerate();
+
+        Cookie::queue(Cookie::make('login', $name, 60));
+        Cookie::queue(Cookie::make('admin', $admin_verified, 60));
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }
@@ -47,8 +59,11 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->invalidate();
 
+        Cookie::queue(Cookie::forget('login'));
+        Cookie::queue(Cookie::forget('admin'));
+
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('teams');
     }
 }

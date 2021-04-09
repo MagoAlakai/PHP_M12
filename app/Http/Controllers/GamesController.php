@@ -5,15 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Game;
+use App\Models\Team;
 
 class GamesController extends Controller
 {
     //CREATE
     public function createForm(){
-        return view('games/createGame');
+
+        $teams = Team::all();
+        return view('games/createGame', compact('teams'));
     }
 
     public function create(Request $request) {
+
         $request->validate([
             'date' => 'required',
             'estadium' => 'required',
@@ -41,7 +45,7 @@ class GamesController extends Controller
                 'stadium' => $stadium,
             ]);
               Alert::success('The new game has been created successfully!')->persistent(true,false);
-              return redirect('games');
+              return redirect('games', compact('teams'));
           }else{
               //TODO: hacer error con try & catch
               return redirect('error404');
