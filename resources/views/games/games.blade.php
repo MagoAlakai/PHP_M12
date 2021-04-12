@@ -5,7 +5,7 @@
 
 <h3 class="container text-center mt-5">Games List</h3>
 <div class="container mt-4">
-    <table class="table">
+    <table class="table table-striped">
         <thead>
         <tr>
             <th class="col-1" cope="col">#</th>

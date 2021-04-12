@@ -5,10 +5,10 @@
 
 <h3 class="container text-center mt-5">Teams List</h3>
 <div class="container mt-4">
-    <table class="table">
+    <table class="table table-striped">
         <thead>
         <tr>
-            <th class="col-1" scope="col">#</th>
+            <th class="col-2" scope="col">#</th>
             <th class="col-3" scope="col">Name</th>
             <th class="col-3" scope="col">City</th>
             <th class="col-3" scope="col">Stadium</th>
