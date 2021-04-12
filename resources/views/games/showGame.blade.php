@@ -8,10 +8,10 @@
 
 <div class="container mt-4">
     <ul class="row d-block">
-        <li class="col-3 mt-2 mx-auto"><strong>Date: </strong>{{$game->date}}</li>
-        <li class="col-3 mt-2 mx-auto"><strong>Visitor Team: </strong>{{$game->team_1}} - {{$game->result_1}}</li>
-        <li class="col-3 mt-2 mx-auto"><strong>Local Team: </strong>{{$game->team_2}} - {{$game->result_2}}</li>
-        <li class="col-3 mt-2 mx-auto"><strong>Stadium: </strong>{{$game->stadium}}</li>
+        <li class="col-4 mt-2 mx-auto"><strong>Date: </strong>{{$game->date}}</li>
+        <li class="col-4 mt-2 mx-auto"><strong>Visitor Team: </strong>{{$game->team_1}} - {{$game->result_1}}</li>
+        <li class="col-4 mt-2 mx-auto"><strong>Local Team: </strong>{{$game->team_2}} - {{$game->result_2}}</li>
+        <li class="col-4 mt-2 mx-auto"><strong>Stadium: </strong>{{$game->stadium}}</li>
     </ul>
 
     <div class="container d-flex justify-content-center">

@@ -36,7 +36,6 @@
             @enderror
         </div>
     </div>
-    <!--TODO:averiguar cómo seleccionar equipos.-->
     <div class="d-flex justify-content-center mb-2">
         <div class="mb-3 col-6">
             <label class="form-label">Local Team</label>
@@ -58,7 +57,6 @@
             @enderror
         </div>
     </div>
-    <!--TODO:averiguar cómo seleccionar estadios.-->
     <div class="mb-3 col-8 mx-auto">
         <label class="form-label">Stadium</label>
         <select class="form-select form-control"  id="stadium" name="stadium" class=" @error('stadium') is-invalid @enderror">
@@ -71,7 +69,7 @@
                 <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
-    <button type="submit" class="btn btn-primary col-8 mx-auto">Create game</button>
+    <button type="submit" class="btn btn-primary col-8 mx-auto mb-2">Create game</button>
   </form>
 
 @endsection

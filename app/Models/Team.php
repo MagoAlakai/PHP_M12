@@ -22,6 +22,6 @@ class Team extends Model
         return $this->hasMany(Game::class, 'team_2', 'id');
     }
     public function games(){
-        return $this->hasMany(Game::class, 'team_2', 'id')->orWhere('team_2', $this->id);
+        return $this->hasMany(Game::class, 'team_1', 'id')->orWhere('team_2', $this->id);
     }
 }

@@ -41,8 +41,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        Cookie::queue(Cookie::make('login', $name, 60));
-        Cookie::queue(Cookie::make('admin', $admin_verified, 60));
+        Cookie::queue(Cookie::make('login', $name, 120));
+        Cookie::queue(Cookie::make('admin', $admin_verified, 120));
 
         return redirect('teams');
     }

@@ -31,17 +31,6 @@ Route::get('/', function(){
     return view('home');
 });
 
-// //Route login
-// Route::get('login', [Controller::class, 'loginForm']);
-// Route::post('login', [Controller::class, 'check']);
-
-// //Route register
-// Route::get('register', [Controller::class, 'registerForm']);
-// Route::post('register', [Controller::class, 'store']);
-
-// //Route recover password
-// Route::get('password', [Controller::class, 'passwordForm']);
-// Route::post('password', [Controller::class, 'recover']);
 
 //Routes Teams
 Route::prefix('teams')->group(function () {
