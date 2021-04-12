@@ -62,12 +62,14 @@
           <li class="nav-item">
             <a class="nav-link active" href="/">Home</a>
           </li>
+          @if(!Cookie::get('login'))
           <li class="nav-item">
             <a class="nav-link active" href="register">Register</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="login">Login</a>
           </li>
+          @endif
           <li class="nav-item">
             <a class="nav-link active" href="teams">Teams</a>
           </li>
@@ -77,7 +79,7 @@
         </ul>
             <div class="d-flex align-items-center me-3">
                 @if(Cookie::get('login'))
-                    <h6 class="navbar-brand">{{ Cookie::get('login') }}</h6>
+                    <h6 class="navbar-brand align-items-center mt-1">{{ Cookie::get('login') }}</h6>
                 @endif
                 <img src={{Storage::url("images/user.png")}} alt="User"width="30" height="30">
             </div>

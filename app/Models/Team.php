@@ -15,7 +15,13 @@ class Team extends Model
         'stadium',
     ];
 
+    public function visitor_games(){
+        return $this->hasMany(Game::class, 'team_1', 'id');
+    }
+    public function local_games(){
+        return $this->hasMany(Game::class, 'team_2', 'id');
+    }
     public function games(){
-        return $this->hasMany(Game::class);
+        return $this->hasMany(Game::class, 'team_2', 'id')->orWhere('team_2', $this->id);
     }
 }

@@ -20,10 +20,10 @@ class Game extends Model
     ];
 
     public function visitante(){
-        return $this->belongsToMany(Team::class,'games', 'team_1', 'id');
+        return $this->belongsTo(Team::class,'games', 'team_1', 'id');
     }
 
     public function local(){
-        return $this->belongsToMany(Team::class,'games', 'team_2', 'id');
+        return $this->belongsTo(Team::class,'games', 'team_2', 'id');
     }
 }
