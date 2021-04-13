@@ -13,7 +13,7 @@
             <th class="col-3" scope="col">Visitor Team - Result</th>
             <th class="col-3" scope="col">Local Team - Result</th>
             <th class="col-2" scope="col">Stadium</th>
-            @if(Cookie::get('admin') == true)
+            @if(Auth::check())
              <th class="col-2" scope="col">Action</th>
             @endif
         </tr>
@@ -26,7 +26,7 @@
                 <td>{{$game->team_1}} - {{$game->result_1}}</td>
                 <td>{{$game->team_2}} - {{$game->result_2}}</td>
                 <td>{{$game->stadium}}</td>
-                @if(Cookie::get('admin') == true)
+                @if(Auth::check())
                 <td class="d-inline-flex justify-content-center align-items-center">
                     <a href="games/show/{{$game->id}}"><i class="far fa-lg fa-eye me-3" style="color:rgb(86, 170, 80)";></i></a>
                     <a href="games/edit/{{$game->id}}"><i class="far fa-lg fa-edit"></i></a>
@@ -45,9 +45,9 @@
         </tbody>
     </table>
 
-    @if(Cookie::get('admin') == true)
+    @if(Auth::check())
     <div class="container d-flex justify-content-center">
-        <a href="games/create"><button type="button" class="btn btn-primary mt-4">Create new game</button></a>
+        <a href="games/create"><button type="button" class="btn btn-outline-primary mt-4">Create new game</button></a>
     </div>
     @endif
 </div>

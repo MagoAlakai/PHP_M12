@@ -30,19 +30,8 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        //dd($request);
-        $email = $request->email;
-        $user = User::where('email', $email)->first();
-        $name = $user->name;
-        //dd($name);
-        $admin_verified = true;
-
         $request->authenticate();
-
         $request->session()->regenerate();
-
-        Cookie::queue(Cookie::make('login', $name, 120));
-        Cookie::queue(Cookie::make('admin', $admin_verified, 120));
 
         return redirect('teams');
     }
@@ -58,10 +47,6 @@ class AuthenticatedSessionController extends Controller
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
-
-        Cookie::queue(Cookie::forget('login'));
-        Cookie::queue(Cookie::forget('admin'));
-
         $request->session()->regenerateToken();
 
         return redirect('teams');

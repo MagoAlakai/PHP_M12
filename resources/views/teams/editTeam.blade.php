@@ -34,7 +34,7 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary col-8 mx-auto">Update team</button>
+    <button type="submit" class="btn btn-outline-primary col-8 mx-auto">Update team</button>
   </form>
 
 @endsection

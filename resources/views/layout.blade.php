@@ -59,42 +59,47 @@
             <img src={{Storage::url("images/IT_logo.png")}} alt="Logo" width="80" height="24">
         </a>
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="teams">Teams</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="games">Games</a>
-          </li>
-          @if(!Cookie::get('login'))
             <li class="nav-item">
-                <a class="nav-link active" href="register">Register</a>
+                <a class="nav-link active" href="/">Home</a>
             </li>
-          @endif
+            <li class="nav-item">
+                <a class="nav-link active" href="teams">Teams</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="games">Games</a>
+            </li>
+            @if(!Auth::check())
+                <li class="nav-item">
+                    <a class="nav-link active" href="register">Register</a>
+                </li>
+            @endif
+            {{-- @if(!Cookie::get('login'))
+                <li class="nav-item">
+                    <a class="nav-link active" href="register">Register</a>
+                </li>
+            @endif --}}
         </ul>
             <div class="d-flex align-items-center me-4">
                 <ul class="navbar-nav me-2 mb-2 mb-md-0">
 
-                    @if(!Cookie::get('login'))
+                    @if(!Auth::check())
                     <li class="nav-item">
                       <a class="nav-link active" href="login">Login</a>
                     </li>
                     @endif
 
-                  </ul>
-                @if(Cookie::get('login'))
-                    <h6 class="navbar-brand align-items-center mt-1">{{ Cookie::get('login') }}</h6>
+                </ul>
+                @if(Auth::check())
+                    <h6 class="navbar-brand align-items-center mt-1">{{ Auth::user()->name}}</h6>
                 @endif
                 <img src={{Storage::url("images/user.png")}} alt="User"width="30" height="30">
             </div>
 
-            @if(Cookie::get('login'))
+            @if(Auth::check())
 
                 <form class="d-flex me-2" method="POST" action="{{ route('logout') }}">
                     <input type="hidden" name="_token" value={{csrf_token()}}>
-                    <button class="btn btn-success" type="submit">Log Out</button>
+                    <button class="btn btn-outline-light" type="submit">Log Out</button>
                 </form>
 
             @endif
