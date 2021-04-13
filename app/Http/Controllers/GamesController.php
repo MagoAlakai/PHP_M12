@@ -23,7 +23,7 @@ class GamesController extends Controller
             'date' => 'required',
             'team_1' => 'required',
             'result_1' => 'required',
-            'team_2' => 'required',
+            'team_2' => 'required|different:team_1',
             'result_2' => 'required',
             'stadium' => 'required',
           ]);
@@ -118,7 +118,7 @@ class GamesController extends Controller
             'date' => 'required',
             'team_1' => 'required',
             'result_1' => 'required',
-            'team_2' => 'required',
+            'team_2' => 'required|different:team_1',
             'result_2' => 'required',
             'stadium' => 'required',
           ]);

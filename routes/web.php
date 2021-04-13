@@ -81,8 +81,8 @@ Route::prefix('games')->group(function () {
 
 
 //Route página error 404
-Route::get('error404', function(){
-    return view('error404');
+Route::get('404', function(){
+    return view('errors/404');
 });
 
 require __DIR__.'/auth.php';
