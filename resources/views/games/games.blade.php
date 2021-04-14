@@ -26,7 +26,7 @@
                 <td>{{$game->team_1}} - {{$game->result_1}}</td>
                 <td>{{$game->team_2}} - {{$game->result_2}}</td>
                 <td>{{$game->stadium}}</td>
-                @if(Auth::check())
+                @if(Auth::check() && Auth::user()->hasRole('administrator'))
                 <td class="d-inline-flex justify-content-center align-items-center">
                     <a href="games/show/{{$game->id}}"><i class="far fa-lg fa-eye me-3" style="color:rgb(86, 170, 80)";></i></a>
                     <a href="games/edit/{{$game->id}}"><i class="far fa-lg fa-edit"></i></a>
@@ -45,7 +45,7 @@
         </tbody>
     </table>
 
-    @if(Auth::check())
+    @if(Auth::check() && Auth::user()->hasRole('administrator'))
     <div class="container d-flex justify-content-center">
         <a href="games/create"><button type="button" class="btn btn-outline-primary mt-4">Create new game</button></a>
     </div>

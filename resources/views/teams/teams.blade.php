@@ -24,7 +24,7 @@
                 <td>{{$team->name}}</td>
                 <td>{{$team->city}}</td>
                 <td>{{$team->stadium}}</td>
-                @if(Auth::check())
+                @if(Auth::check() && Auth::user()->hasRole('administrator'))
                 <td class="d-inline-flex justify-content-center align-items-center">
                     <a href="teams/show/{{$team->id}}"><i class="far fa-lg fa-eye me-3" style="color:rgb(86, 170, 80)";></i></a>
                     <a href="teams/edit/{{$team->id}}"><i class="far fa-lg fa-edit"></i></a>
@@ -43,7 +43,7 @@
         </tbody>
     </table>
 
-    @if(Auth::check())
+    @if(Auth::check() && Auth::user()->hasRole('administrator'))
     <div class="container d-flex justify-content-center">
         <a href="teams/create"><button type="button" class="btn btn-outline-primary mt-4">Create new team</button></a>
     </div>

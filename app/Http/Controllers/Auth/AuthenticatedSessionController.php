@@ -33,7 +33,7 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
         $request->session()->regenerate();
 
-        return redirect('teams');
+        return redirect(RouteServiceProvider::TEAMS);
     }
 
     /**
@@ -49,6 +49,6 @@ class AuthenticatedSessionController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('teams');
+        return redirect('/');
     }
 }

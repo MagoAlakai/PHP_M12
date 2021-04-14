@@ -4,7 +4,7 @@
 
 <x-guest-layout>
 
-    <h3 class="mt-5 mb-4 text-center">Register</h3>
+    <h3 class="mt-4 mb-3 text-center">Register</h3>
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
@@ -24,21 +24,34 @@
                 <x-input id="email" class="form-control block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
 
-            <!-- Password -->
-            <div class="mb-3 col-4 mx-auto">
-                <x-label class="form-label mb-0"  for="password" :value="__('Password')" />
-                <x-input id="password" class="form-control block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
+            <div class="d-flex col-4 mx-auto">
+
+                <!-- Password -->
+                <div class="mb-3 ">
+                    <x-label class="form-label mb-0"  for="password" :value="__('Password')" />
+                    <x-input id="password" class="form-control block mt-1 w-full"
+                                    type="password"
+                                    name="password"
+                                    required autocomplete="new-password" />
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="mb-3 mx-auto">
+                    <x-label class="form-label mb-0" for="password_confirmation" :value="__('Confirm Password')" />
+                    <x-input id="password_confirmation" class="form-control block mt-1 w-full"
+                                    type="password"
+                                    name="password_confirmation" required/>
+                </div>
+
             </div>
 
-            <!-- Confirm Password -->
+            <!-- Role -->
             <div class="mb-3 col-4 mx-auto">
-                <x-label class="form-label mb-0" for="password_confirmation" :value="__('Confirm Password')" />
-                <x-input id="password_confirmation" class="form-control block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
+                <x-label class="form-label mb-0" for="role" :value="__('Role')"/>
+                <select class="form-select form-control block mt-1 w-full"  id="role" name="role" required>
+                    <option>Admin</option>
+                    <option>User</option>
+                </select>
             </div>
 
             <div class="mb-3 col-4 mx-auto">

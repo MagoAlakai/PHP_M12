@@ -62,22 +62,20 @@
             <li class="nav-item">
                 <a class="nav-link active" href="/">Home</a>
             </li>
+            @if(Auth::check())
             <li class="nav-item">
                 <a class="nav-link active" href="teams">Teams</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="games">Games</a>
             </li>
+            @endif
             @if(!Auth::check())
                 <li class="nav-item">
                     <a class="nav-link active" href="register">Register</a>
                 </li>
             @endif
-            {{-- @if(!Cookie::get('login'))
-                <li class="nav-item">
-                    <a class="nav-link active" href="register">Register</a>
-                </li>
-            @endif --}}
+
         </ul>
             <div class="d-flex align-items-center me-4">
                 <ul class="navbar-nav me-2 mb-2 mb-md-0">
