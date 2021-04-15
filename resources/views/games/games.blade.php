@@ -3,18 +3,18 @@
 
 @section('content')
 
-<h3 class="container text-center mt-5">Games List</h3>
+<h3 class="container text-center mt-3">Games List</h3>
 <div class="container mt-4">
     <table class="table table-striped">
         <thead>
         <tr>
-            <th class="col-1" cope="col">#</th>
-            <th class="col-2" scope="col">Date</th>
-            <th class="col-3" scope="col">Visitor Team - Result</th>
-            <th class="col-3" scope="col">Local Team - Result</th>
-            <th class="col-2" scope="col">Stadium</th>
+            <th cope="col">#</th>
+            <th scope="col">Date</th>
+            <th scope="col">Visitor Team - Result</th>
+            <th scope="col">Local Team - Result</th>
+            <th scope="col">Stadium</th>
             @if(Auth::check())
-             <th class="col-2" scope="col">Action</th>
+             <th scope="col">Action</th>
             @endif
         </tr>
         </thead>
