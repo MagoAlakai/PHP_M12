@@ -3,7 +3,7 @@
 
 @section('content')
 
-<div class="section__content section__content--p30">
+<div class="section__content section__content--p30 mr-4 ml-4">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">

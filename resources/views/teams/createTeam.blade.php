@@ -32,7 +32,7 @@
     </div>
 
     </div>
-    <button type="submit" class="btn btn-primary col-8 mx-auto">Create team</button>
+    <button type="submit" class="btn btn-outline-primary col-8 mx-auto">Create team</button>
   </form>
 
 @endsection

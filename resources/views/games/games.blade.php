@@ -28,7 +28,7 @@
                 <td>{{$game->stadium}}</td>
                 @if(Auth::check() && Auth::user()->hasRole('administrator'))
                 <td class="d-inline-flex justify-content-center align-items-center">
-                    <a href="games/show/{{$game->id}}"><i class="far fa-lg fa-eye me-3" style="color:rgb(86, 170, 80)";></i></a>
+                    <a href="games/show/{{$game->id}}"><i class="fas fa-lg fa-eye mr-3" style="color:rgb(86, 170, 80);"></i></a>
                     <a href="games/edit/{{$game->id}}"><i class="far fa-lg fa-edit"></i></a>
                     <form action="games/delete/{{$game->id}}" method="POST" type="submit">
                         @csrf
