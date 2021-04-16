@@ -15,6 +15,8 @@
                         <form method="POST">
                             @csrf
                             @method('PUT')
+
+                            {{-- Name --}}
                             <div class="form-group">
                                 <label class="form-label">Name</label>
                                 <input type="text" id="name" name="name" class="form-control block mt-1 w-full @error('name') is-invalid @enderror" value="{{$team->name}}">
@@ -22,6 +24,8 @@
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
+
+                            {{-- City & Stadium --}}
                             <div class="d-flex form-group">
                                 <div class="form-group">
                                     <label class="form-label">City</label>
@@ -43,6 +47,8 @@
                             <button type="submit" class="btn btn-outline-primary btn-block">Update team</button>
                         </form>
                     </div>
+
+                    {{-- Back to List --}}
                     <div class="container d-flex justify-content-center">
                         <a href="{{url('/teams')}}"><button type="button" class="btn btn-outline-success mt-4">Back to Teams List</button></a>
                     </div>

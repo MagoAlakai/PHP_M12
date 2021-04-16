@@ -5,7 +5,7 @@
 
 <h3 class="container text-center mt-3">Teams List</h3>
 <div class="container mt-4">
-    <table class="table table-striped">
+    <table class="table table-borderless table-striped table-earning">
         <thead>
         <tr>
             <th scope="col">#</th>

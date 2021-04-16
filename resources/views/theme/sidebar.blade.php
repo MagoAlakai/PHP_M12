@@ -9,16 +9,16 @@
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list">
                 <li class="active has-sub">
-                    <a class="js-arrow" href="/">
+                    <a class="js-arrow" href="{{url('/')}}">
                     <i class="fas fa-tachometer-alt"></i>Home</a>
                 </li>
                 @if(Auth::check())
                 <li>
-                    <a href="teams">
+                    <a href="{{url('/teams')}}">
                         <i class="fas fa-chart-bar"></i>Teams</a>
                 </li>
                 <li>
-                    <a href="games">
+                    <a href="{{url('/games')}}">
                         <i class="fas fa-table"></i>Games</a>
                 </li>
                 @endif

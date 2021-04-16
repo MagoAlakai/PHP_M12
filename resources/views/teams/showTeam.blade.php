@@ -18,9 +18,8 @@
                     </div>
                 </div>
             </div>
-            <div class="container d-flex justify-content-center">
-                <a href="{{url('/teams')}}"><button type="button" class="btn btn-outline-success mt-4">Back to Teams List</button></a>
-            </div>
+        <div class="container d-flex justify-content-center">
+            <a href="{{url('/teams')}}"><button type="button" class="btn btn-outline-success mt-4">Back to Teams List</button></a>
         </div>
     </div>
 </div>

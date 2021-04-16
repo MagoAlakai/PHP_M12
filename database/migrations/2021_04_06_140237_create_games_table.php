@@ -24,8 +24,8 @@ class CreateGamesTable extends Migration
             $table->timestamps();
 
             //Foreign keys
-            $table->foreign('team_1')->references('id')->on('teams');
-            $table->foreign('team_2')->references('id')->on('teams');
+            $table->foreign('team_1')->references('id')->on('teams')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('team_2')->references('id')->on('teams')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
