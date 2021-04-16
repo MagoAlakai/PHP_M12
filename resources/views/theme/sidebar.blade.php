@@ -28,13 +28,13 @@
                         <i class="fas fa-copy"></i>Pages</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                            <a href="login">Login</a>
+                            <a href="{{url('/register')}}">Register</a>
                         </li>
                         <li>
-                            <a href="register">Register</a>
+                            <a href="{{url('/login')}}">Login</a>
                         </li>
                         <li>
-                            <a href="forgot-password">Forget Password</a>
+                            <a href="{{url('/forgot-password')}}">Forget Password</a>
                         </li>
                     </ul>
                 </li>
