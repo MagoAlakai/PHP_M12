@@ -12,8 +12,9 @@
                         <h2 class="text-center">Login</h2>
                     </div>
                     <div class="login-form">
-                        <form class="mt-4 mb-4" method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="{{ route('login') }}">
                             @csrf
+                            <!-- Email -->
                             <div class="form-group">
                                 <x-label class="form-label mb-0" for="email" :value="__('Email')" />
                                 <x-input id="email" class="form-control block mt-1 w-full" type="email" name="email" :value="old('email')" placeholder="Email address" required autofocus/>
@@ -40,9 +41,7 @@
                                     @endif
                                 </label>
                             </div>
-                            <button class="btn btn-block btn-outline-primary mt-3 mb-4">
-                                {{ __('Log in') }}
-                            </button>
+                            <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">{{ __('Log in') }}</button>
 
                         </form>
                         <div class="register-link">

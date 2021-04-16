@@ -54,6 +54,11 @@
             </div>
             <!-- END MAIN CONTENT-->
             <!-- END PAGE CONTAINER-->
+            <div class="col-md-12 mt-5">
+                <div class="d-flex justify-content-center">
+                    <p class="align-bottom">Copyright © 2021 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -79,13 +84,6 @@
     <script src="{{ asset('theme/js/main.js') }}"></script>
     @include('sweetalert::alert')
 </body>
-<div class="page-wrapper">
-    <div class="col-md-12">
-        <div class="copyright footer">
-            <p>Copyright Â© 2021 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
-        </div>
-    </div>
-</div>
 </html>
 <!-- end document-->
 

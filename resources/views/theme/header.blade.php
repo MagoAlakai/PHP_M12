@@ -249,13 +249,14 @@
                     <div class="account-wrap">
                         <div class="account-item clearfix js-item-menu">
                             <div class="content">
+                                <img class="mr-2" src={{Storage::url("images/user_black.png")}} alt="picture" width="35" height="35"/>
                                 <a class="js-acc-btn" href="#">{{ Auth::user()->name}}</a>
                             </div>
                             <div class="account-dropdown js-dropdown">
                                 <div class="info clearfix">
                                     <div class="image pt-2">
                                         <a href="#">
-                                            <img src={{Storage::url("images/user_black.png")}} alt="John Doe" width="50" height="50"/>
+                                            <img src={{Storage::url("images/user_black.png")}} alt="picture" width="50" height="50"/>
                                         </a>
                                     </div>
                                     <div class="content">

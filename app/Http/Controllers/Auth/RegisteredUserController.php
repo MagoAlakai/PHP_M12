@@ -9,6 +9,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RegisteredUserController extends Controller
 {
@@ -54,6 +55,7 @@ class RegisteredUserController extends Controller
         }
 
         event(new Registered($user));
+        Alert::success('The registration has been successful!', 'Please login to your account')->persistent(true,false);
         return view('auth/login');
     }
 }
