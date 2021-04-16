@@ -128,7 +128,7 @@
 
                 <div class="d-inline-flex">
                     @if(!Auth::check())
-                        <a class="nav-link active" href="login">Login<i class="zmdi zmdi-power pl-2"></i></a>
+                        <a class="nav-link active" href="{{url('/login')}}">Login<i class="zmdi zmdi-power pl-2"></i></a>
                     @endif
                 </div>
 

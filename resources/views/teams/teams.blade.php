@@ -12,7 +12,7 @@
             <th scope="col">Name</th>
             <th scope="col">City</th>
             <th scope="col">Stadium</th>
-            @if(Auth::check())
+            @if(Auth::check() && Auth::user()->hasRole('administrator'))
             <th scope="col">Action</th>
             @endif
         </tr>

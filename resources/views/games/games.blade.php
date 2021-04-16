@@ -13,7 +13,7 @@
             <th scope="col">Visitor Team - Result</th>
             <th scope="col">Local Team - Result</th>
             <th scope="col">Stadium</th>
-            @if(Auth::check())
+            @if(Auth::check() && Auth::user()->hasRole('administrator'))
              <th scope="col">Action</th>
             @endif
         </tr>
