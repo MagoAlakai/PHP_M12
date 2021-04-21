@@ -27,8 +27,8 @@ class AuthenticationTest extends TestCase
             'password' => 'password',
         ]);
 
-        $this->assertAuthenticated();
-        $response->assertRedirect(RouteServiceProvider::HOME);
+        $this->assertAuthenticated($user[0]);
+        $response->assertRedirect('teams');
     }
 
     public function test_users_can_not_authenticate_with_invalid_password()

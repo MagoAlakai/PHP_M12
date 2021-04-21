@@ -16,8 +16,9 @@ class EmailVerificationTest extends TestCase
 
     public function test_email_verification_screen_can_be_rendered()
     {
+        $this->withoutExceptionHandling();
         $user = User::factory()->create([
-            'email_verified_at' => null,
+            'email_verified_at' => null, //He probado diferentes formatos de date();
         ]);
 
         $response = $this->actingAs($user)->get('/verify-email');
